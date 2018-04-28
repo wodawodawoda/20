@@ -1,0 +1,8 @@
+.navbar-toggler-icon {
+    -moz-appearance: button;
+    -webkit-appearance: button;
+}
+
+.navbar-toggler-icon:checked + #navbarSupportedContent {
+    display: flex;
+}
