@@ -1,5 +1,5 @@
 import {GET_COUNTRIES, GET_COUNTRY, DELETE_COUNTRY, SEARCH_COUNTRIES, SET_CONTINENT} from '../actions/actionsTypes'
-import countriesData from '../../data/countries'
+import countriesData from '../data/countries'
 
 const initialState = {
   countries: countriesData
