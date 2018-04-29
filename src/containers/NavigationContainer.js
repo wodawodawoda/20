@@ -4,10 +4,6 @@ import Navigation from '../presentational/Navigation'
 import {searchCountries} from '../actions/actions-countries'
 
 class NavigationContainer extends Component {
-  constructor (props) {
-    super(props);
-  }
-
   handleInput = (text) => {
     console.log(text)
     this.props.searchCountries(text)

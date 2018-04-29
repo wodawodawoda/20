@@ -4,10 +4,6 @@ import { setContinent } from '../actions/actions-countries'
 import Continent from '../presentational/Continents'
 
 class ContinentsContainer extends Component {
-  constructor (props) {
-    super(props);
-  }
-
   componentDidMount() {
     document.querySelector('#selectContinent').value = this.props.continent
     const initialContinent = document.querySelector('#selectContinent').value

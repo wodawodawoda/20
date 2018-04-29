@@ -4,17 +4,25 @@ import CountryFlagList from '../presentational/CountryFlagList';
 import { deleteCountry, getCountries, searchCountries } from '../actions/actions-countries'
 
 class CountryFlagContainer extends Component {
-  constructor (props) {
-    super(props);
-  }
-
   componentDidMount() {
     this.props.getCountries()
   }
 
+  // Handle searching in dataset which is visible on screen
+  handleSearch() {
+    console.log(this.props.searchText)
+    if(this.props.search == 0 && this.props.searchText != 0) {
+      return this.props.search
+    } else if (this.props.search == 0) {
+      return this.props.countries
+    } else {
+      return this.props.search
+    }
+  }
+
   render() {
     return (
-      <CountryFlagList countries={this.props.search == 0 ? this.props.countries : this.props.search}
+      <CountryFlagList countries={this.handleSearch()}
                        deleteCountry={this.props.deleteCountry}/>
     );
   }
@@ -23,7 +31,8 @@ class CountryFlagContainer extends Component {
 const mapStateToProps = function(store) {
   return {
     countries: store.countriesReducer.visibleCountries,
-    search: store.countriesReducer.searchCountries
+    search: store.countriesReducer.searchCountries,
+    searchText: store.countriesReducer.searchText
   }
 }
 

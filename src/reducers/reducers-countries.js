@@ -6,6 +6,7 @@ const initialState = {
   country: {},
   visibleCountries: [],
   searchCountries: [],
+  searchText: '',
   // continent state added to remember choosen continent when user is moving between pages
   continent: 'Europa'
 }
@@ -36,11 +37,13 @@ const countriesReducer = function (state = initialState, action) {
       })
       return {
         ...state,
-        searchCountries
+        searchCountries,
+        searchText: action.searchText
       }
     case DELETE_COUNTRY:
       const deleteCountries = state.countries.filter(country => country.id != action.id)
-      const deleteSearchCountries = state.searchCountries.filter(country => country.id != action.id)
+      const deleteSearchCountries = state.visibleCountries.filter(country => country.id != action.id)
+      console.log({deleteCountries, deleteSearchCountries})
       return {
         ...state,
         countries: deleteCountries,
@@ -53,8 +56,9 @@ const countriesReducer = function (state = initialState, action) {
         visibleCountries: searchContinentCountries,
         continent: action.continent
       }
+    default:
+      return state
   }
-  return state
 }
 
 export default countriesReducer

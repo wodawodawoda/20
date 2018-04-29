@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router';
 import CountryFlag from './CountryFlag';
 
+
 const CountryFlagList = ({countries, deleteCountry, elo}) => (
   <div className="countries-list">
     {countries.map(country => {
