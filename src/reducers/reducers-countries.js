@@ -12,6 +12,15 @@ const countriesReducer = function (state = initialState,action) {
         ...state,
         countries: state.countries
       }
+    case GET_COUNTRY:
+      const country = state.countries.find(country => {
+        return country.id == action.id
+      })
+      console.log(country)
+      return {
+        ...state,
+        country
+      }
   }
   return state
 }

@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '../styles/navigation.css'
 
 
-const Navigation = props => (
+const Navigation = ({children}) => (
   <div>
     <nav className="navbar navbar-expand-lg navbar-light">
         <Link className="navbar-brand">Logo</Link>
@@ -24,7 +24,7 @@ const Navigation = props => (
         </div>
     </nav>
     <div className="container-fluid">
-      {props.children}
+      {children}
     </div>
   </div>
 )
