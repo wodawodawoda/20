@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router';
 import CountryFlag from './CountryFlag';
 
-const CountryFlagList = ({countries}) => (
+const CountryFlagList = ({countries, deleteCountry, elo}) => (
   <div className="countries-list">
     {countries.map(country => {
       return (
@@ -10,6 +10,7 @@ const CountryFlagList = ({countries}) => (
           <Link className="flag" to={`countries/country/${country.id}`}>
             <CountryFlag country={country}/>
           </Link>
+          <button onClick={() => deleteCountry(country.id)}>DELETE</button>
         </div>
       )
     })}
