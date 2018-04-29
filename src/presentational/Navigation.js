@@ -19,7 +19,6 @@ const Navigation = ({children, handleInput}) => (
           <ul className="navbar-nav mr-auto">
             <li className="nav-item"><Link to="/countries" className="nav-link">Countries</Link></li>
             <li className="nav-item"><Link to="/continents" className="nav-link">Continents</Link></li>
-            <li className="nav-item"><Link to="/contact" className="nav-link">Contact</Link></li>
           </ul>
           <form className="form-inline my-2 my-lg-0">
             <input id="searchCountry"

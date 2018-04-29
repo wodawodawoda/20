@@ -8,6 +8,12 @@ class ContinentsContainer extends Component {
     super(props);
   }
 
+  componentDidMount() {
+    document.querySelector('#selectContinent').value = this.props.continent
+    const initialContinent = document.querySelector('#selectContinent').value
+    this.props.setContinent(initialContinent)
+  }
+
   handleInput = (continent) => {
     this.props.setContinent(continent)
   }
@@ -17,8 +23,14 @@ class ContinentsContainer extends Component {
   }
 }
 
+const mapStateToProps = store => {
+  return {
+    continent: store.countriesReducer.continent
+  }
+}
+
 const mapDispatchToProps = dispatch => ({
   setContinent: (continent) => dispatch(setContinent(continent))
 })
 
-export default connect(null, mapDispatchToProps)(ContinentsContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(ContinentsContainer);

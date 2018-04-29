@@ -12,21 +12,18 @@ class CountryFlagContainer extends Component {
     this.props.getCountries()
   }
 
-  componentWillUnmount() {
-    // Reset 'visibleCountries' on unMount as we using same store on diffrent pages
-    this.props.searchCountries()
-  }
-
   render() {
     return (
-      <CountryFlagList countries={this.props.countries} deleteCountry={this.props.deleteCountry}/>
+      <CountryFlagList countries={this.props.search == 0 ? this.props.countries : this.props.search}
+                       deleteCountry={this.props.deleteCountry}/>
     );
   }
 }
 
 const mapStateToProps = function(store) {
   return {
-    countries: store.countriesReducer.visibleCountries != 0 ? store.countriesReducer.visibleCountries : store.countriesReducer.countries
+    countries: store.countriesReducer.visibleCountries,
+    search: store.countriesReducer.searchCountries
   }
 }
 
