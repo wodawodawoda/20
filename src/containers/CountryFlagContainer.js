@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import CountryFlagList from '../presentational/CountryFlagList';
-import { deleteCountry, getCountries} from '../actions/actions-countries'
+import { deleteCountry, getCountries, searchCountries } from '../actions/actions-countries'
 
 class CountryFlagContainer extends Component {
   constructor (props) {
@@ -10,6 +10,11 @@ class CountryFlagContainer extends Component {
 
   componentDidMount() {
     this.props.getCountries()
+  }
+
+  componentWillUnmount() {
+    // Reset 'visibleCountries' on unMount as we using same store on diffrent pages
+    this.props.searchCountries()
   }
 
   render() {
@@ -21,14 +26,15 @@ class CountryFlagContainer extends Component {
 
 const mapStateToProps = function(store) {
   return {
-    countries: store.countriesReducer.searchCountries != 0 ? store.countriesReducer.searchCountries : store.countriesReducer.countries
+    countries: store.countriesReducer.visibleCountries != 0 ? store.countriesReducer.visibleCountries : store.countriesReducer.countries
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     getCountries: () => dispatch(getCountries()),
-    deleteCountry: (id) => dispatch(deleteCountry(id))
+    deleteCountry: (id) => dispatch(deleteCountry(id)),
+    searchCountries: () => dispatch(searchCountries('')),
   }
 }
 

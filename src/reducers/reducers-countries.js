@@ -4,7 +4,7 @@ import countriesData from '../data/countries'
 const initialState = {
   countries: countriesData,
   country: {},
-  searchCountries: []
+  visibleCountries: []
 }
 
 const countriesReducer = function (state = initialState, action) {
@@ -26,7 +26,7 @@ const countriesReducer = function (state = initialState, action) {
       const searchCountries = state.countries.filter(country => country.name.toLowerCase().includes(action.searchText.toLowerCase()))
       return {
         ...state,
-        searchCountries
+        visibleCountries: searchCountries
       }
     case DELETE_COUNTRY:
       const deleteCountries = state.countries.filter(country => country.id != action.id)
@@ -34,14 +34,14 @@ const countriesReducer = function (state = initialState, action) {
       return {
         ...state,
         countries: deleteCountries,
-        searchCountries: deleteSearchCountries
+        visibleCountries: deleteSearchCountries
       }
     case SET_CONTINENT:
       const searchContinentCountries = state.countries.filter(country => country.continent.toLowerCase().includes(action.continent.toLowerCase()))
       console.log(searchContinentCountries)
       return {
         ...state,
-        searchCountries: searchContinentCountries
+        visibleCountries: searchContinentCountries
       }
   }
   return state
