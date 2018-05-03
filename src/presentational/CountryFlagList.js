@@ -3,7 +3,7 @@ import {Link} from 'react-router';
 import CountryFlag from './CountryFlag';
 
 
-const CountryFlagList = ({countries, deleteCountry, elo}) => (
+const CountryFlagList = ({countries, deleteCountry}) => (
   <div className="countries-list">
     {countries.map(country => {
       return (
@@ -16,6 +16,6 @@ const CountryFlagList = ({countries, deleteCountry, elo}) => (
       )
     })}
   </div>
-)
+);
 
-export default CountryFlagList
+export default CountryFlagList;

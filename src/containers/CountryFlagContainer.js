@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import CountryFlagList from '../presentational/CountryFlagList';
-import { deleteCountry, getCountries, searchCountries } from '../actions/actions-countries'
+import { deleteCountry, getCountries, searchCountries } from '../actions/actions-countries';
 
 class CountryFlagContainer extends Component {
   componentDidMount() {
@@ -11,11 +11,11 @@ class CountryFlagContainer extends Component {
   // Handle searching in dataset which is visible on screen
   handleSearch() {
     if(this.props.search == 0 && this.props.searchText != 0) {
-      return this.props.search
+      return this.props.search;
     } else if (this.props.search == 0) {
-      return this.props.countries
+      return this.props.countries;
     } else {
-      return this.props.search
+      return this.props.search;
     }
   }
 
@@ -39,7 +39,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     getCountries: () => dispatch(getCountries()),
     deleteCountry: (id) => dispatch(deleteCountry(id)),
-    searchCountries: () => dispatch(searchCountries('')),
+    searchCountries: () => dispatch(searchCountries(''))
   }
 }
 

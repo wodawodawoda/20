@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import Navigation from '../presentational/Navigation'
-import {searchCountries} from '../actions/actions-countries'
+import Navigation from '../presentational/Navigation';
+import {searchCountries} from '../actions/actions-countries';
 
 class NavigationContainer extends Component {
   handleInput = (text) => {
-    console.log(text)
-    this.props.searchCountries(text)
+    this.props.searchCountries(text);
   }
 
   render() {

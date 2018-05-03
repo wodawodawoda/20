@@ -1,6 +1,6 @@
 import {createStore} from 'redux';
 import reducers from '../reducers/index';
-import DevTools from './devTools'
+import DevTools from './devTools';
 
 const store = createStore(
   reducers,

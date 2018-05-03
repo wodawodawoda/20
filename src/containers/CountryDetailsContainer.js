@@ -9,12 +9,12 @@ class CountryDetailsContainer extends Component {
   }
 
   render() {
-    return this.toRender()
+    return this.toRender();
   }
 
   toRender() {
     if(this.props.country) return <CountryDetails country={this.props.country}/>
-    return null
+    return null;
   }
 }
 

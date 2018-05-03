@@ -4,9 +4,9 @@ import NavigationContainer from './containers/NavigationContainer';
 import Home from './presentational/Home';
 import Contact from './presentational/Contact';
 import NotFound from './presentational/NotFound';
-import CountryFlagContainer from './containers/CountryFlagContainer'
-import CountryDetailsContainer from './containers/CountryDetailsContainer'
-import ContinentsContainer from './containers/ContinentsContainer'
+import CountryFlagContainer from './containers/CountryFlagContainer';
+import CountryDetailsContainer from './containers/CountryDetailsContainer';
+import ContinentsContainer from './containers/ContinentsContainer';
 import './styles/navigation.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -23,4 +23,4 @@ export default (
     </Route>
     <Route path="*" component={NotFound}/>
   </Route>
-)
+);

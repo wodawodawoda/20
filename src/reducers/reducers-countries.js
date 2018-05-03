@@ -1,5 +1,5 @@
-import {GET_COUNTRIES, GET_COUNTRY, DELETE_COUNTRY, SEARCH_COUNTRIES, SET_CONTINENT} from '../actions/actionsTypes'
-import countriesData from '../data/countries'
+import {GET_COUNTRIES, GET_COUNTRY, DELETE_COUNTRY, SEARCH_COUNTRIES, SET_CONTINENT} from '../actions/actionsTypes';
+import countriesData from '../data/countries';
 
 const initialState = {
   countries: countriesData,
@@ -61,4 +61,4 @@ const countriesReducer = function (state = initialState, action) {
   }
 }
 
-export default countriesReducer
+export default countriesReducer;

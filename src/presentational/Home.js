@@ -1,10 +1,10 @@
 import React from 'react';
 
 const Home = () => (
-  <div>
+  <div className="home">
     <h1>Country search app</h1>
-    <p>Click "Countries" or "Continents" in navigation to start</p>
+    <h2>Click "Countries" or "Continents" in navigation to start</h2>
   </div>
-)
+);
 
-export default Home
+export default Home;

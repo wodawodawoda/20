@@ -8,6 +8,6 @@ const Continent = ({children, handleInput}) => (
     </select>
     {children}
   </div>
-)
+);
 
-export default Continent
+export default Continent;

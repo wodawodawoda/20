@@ -1,5 +1,5 @@
 import React from 'react';
-import CountryFlag from './CountryFlag'
+import CountryFlag from './CountryFlag';
 
 const CountryDetails = ({country}) => (
   <div className="country-wrapper">
@@ -25,4 +25,4 @@ const CountryDetails = ({country}) => (
   </div>
 );
 
-export default CountryDetails
+export default CountryDetails;

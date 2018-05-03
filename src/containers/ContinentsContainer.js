@@ -1,17 +1,17 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import { setContinent } from '../actions/actions-countries'
-import Continent from '../presentational/Continents'
+import { setContinent } from '../actions/actions-countries';
+import Continent from '../presentational/Continents';
 
 class ContinentsContainer extends Component {
   componentDidMount() {
-    document.querySelector('#selectContinent').value = this.props.continent
-    const initialContinent = document.querySelector('#selectContinent').value
-    this.props.setContinent(initialContinent)
+    document.querySelector('#selectContinent').value = this.props.continent;
+    const initialContinent = document.querySelector('#selectContinent').value;
+    this.props.setContinent(initialContinent);
   }
 
   handleInput = (continent) => {
-    this.props.setContinent(continent)
+    this.props.setContinent(continent);
   }
 
   render() {
@@ -27,6 +27,6 @@ const mapStateToProps = store => {
 
 const mapDispatchToProps = dispatch => ({
   setContinent: (continent) => dispatch(setContinent(continent))
-})
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContinentsContainer);
