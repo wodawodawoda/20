@@ -3,7 +3,6 @@ import CountryFlag from './CountryFlag'
 
 const CountryDetails = ({country}) => (
   <div className="country-wrapper">
-  {console.log(country)}
     <CountryFlag country={country}/>
     <div className="country-info">
       <h1>{country.name}</h1>

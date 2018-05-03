@@ -10,7 +10,6 @@ class CountryFlagContainer extends Component {
 
   // Handle searching in dataset which is visible on screen
   handleSearch() {
-    console.log(this.props.searchText)
     if(this.props.search == 0 && this.props.searchText != 0) {
       return this.props.search
     } else if (this.props.search == 0) {

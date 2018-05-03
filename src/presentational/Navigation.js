@@ -1,13 +1,13 @@
 import React from 'react';
 import {Link} from 'react-router';
 import 'bootstrap/dist/css/bootstrap.css';
-import '../styles/navigation.css';
+// import '../styles/navigation.css';
 
 
 const Navigation = ({children, handleInput}) => (
   <div>
     <nav className="navbar navbar-expand-lg navbar-light">
-        <Link className="navbar-brand">Logo</Link>
+        <Link className="navbar-brand">Country App</Link>
         <input className="navbar-toggler navbar-toggler-icon"
                 type="checkbox"
                 data-toggle="collapse"
@@ -19,18 +19,22 @@ const Navigation = ({children, handleInput}) => (
             <li className="nav-item"><Link to="/countries" className="nav-link">Countries</Link></li>
             <li className="nav-item"><Link to="/continents" className="nav-link">Continents</Link></li>
           </ul>
-          <form className="form-inline my-2 my-lg-0">
+          <form onSubmit={e => handleInput(e.target[1].value)}
+            className="form-inline my-2 my-lg-0 search-form">
+            <button className="btn btn-outline-danger my-2 my-sm-0"
+                    onClick={e => e.target.nextSibling.value = ''}
+                    id="resetSearch">X</button>
             <input id="searchCountry"
                    className="form-control mr-sm-2"
                    type="search"
                    placeholder="Search"
                    aria-label="Search"
-                   onChange={e => handleInput(e.target.value)}/>
+                   />
               <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>
         </div>
     </nav>
-    <div className="container-fluid">
+    <div className="container-fluid m-3">
       {children}
     </div>
   </div>

@@ -1,7 +1,10 @@
 import React from 'react';
 
 const Home = () => (
-  <h1>This is Home component</h1>
+  <div>
+    <h1>Country search app</h1>
+    <p>Click "Countries" or "Continents" in navigation to start</p>
+  </div>
 )
 
 export default Home

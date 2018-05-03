@@ -7,7 +7,8 @@ import NotFound from './presentational/NotFound';
 import CountryFlagContainer from './containers/CountryFlagContainer'
 import CountryDetailsContainer from './containers/CountryDetailsContainer'
 import ContinentsContainer from './containers/ContinentsContainer'
-import './styles/navigation.css'
+import './styles/navigation.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 export default (
   <Route path="/" component={NavigationContainer}>
